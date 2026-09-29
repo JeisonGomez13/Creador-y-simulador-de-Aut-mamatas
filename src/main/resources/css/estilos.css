@@ -1,0 +1,521 @@
+/* ==========================================================================
+   ESTILOS GENERALES Y TOKENS DEL SISTEMA DE DISEÑO (VANILLA JAVAFX CSS)
+   Constitución del Proyecto - Principio 7 (Prohibición de tonos azul y café)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. ANULACIÓN DE VALORES PREDETERMINADOS DE JAVAFX MODENA (SIN AZUL)
+   -------------------------------------------------------------------------- */
+.root {
+    /* Color de acento global del sistema: Violeta Neutro en lugar del azul predeterminado */
+    -fx-accent: #8B5CF6;
+    -fx-focus-color: #8B5CF6;
+    -fx-faint-focus: rgba(139, 92, 246, 0.25);
+
+    /* Tipografía y fondos base */
+    -fx-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #F4F4F6;
+    -fx-text-fill: #121212;
+}
+
+/* --------------------------------------------------------------------------
+   2. PESTAÑAS Y TABPANE (MULTI-LIENZO)
+   -------------------------------------------------------------------------- */
+.tab-pane {
+    -fx-background-color: #F4F4F6;
+}
+
+.tab-pane > .tab-header-area {
+    -fx-background-color: #1E1E24;
+    -fx-padding: 4px 8px 0px 8px;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: #2B2D42;
+    -fx-background-radius: 6px 6px 0px 0px;
+    -fx-background-insets: 0;
+    -fx-padding: 8px 16px;
+    -fx-text-fill: #FFFFFF;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:hover {
+    -fx-background-color: #4A4E69;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #121212;
+    -fx-border-color: #8B5CF6 transparent transparent transparent;
+    -fx-border-width: 3px 0 0 0;
+}
+
+.tab-pane > .tab-header-area > .headers-region > .tab .tab-label {
+    -fx-text-fill: inherit;
+    -fx-font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   3. PANELES Y DIVISORES (SPLITPANE)
+   -------------------------------------------------------------------------- */
+.split-pane {
+    -fx-background-color: #F4F4F6;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.split-pane > .split-pane-divider {
+    -fx-background-color: #E5E7EB;
+    -fx-padding: 0 1px;
+}
+
+.split-pane > .split-pane-divider:hover {
+    -fx-background-color: #8B5CF6;
+}
+
+.panel-contenedor {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   4. LIENZO VIRTUAL Y SCROLLPANE
+   -------------------------------------------------------------------------- */
+.lienzo-scroll {
+    -fx-background-color: #F4F4F6;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.lienzo-scroll > .viewport {
+    -fx-background-color: #F4F4F6;
+}
+
+.lienzo-grafo {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1px;
+}
+
+/* Barras de desplazamiento neutras */
+.scroll-bar:horizontal,
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:horizontal > .thumb,
+.scroll-bar:vertical > .thumb {
+    -fx-background-color: #6B7280;
+    -fx-background-radius: 6px;
+}
+
+.scroll-bar:horizontal > .thumb:hover,
+.scroll-bar:vertical > .thumb:hover {
+    -fx-background-color: #4A4E69;
+}
+
+/* --------------------------------------------------------------------------
+   5. BOTONES Y ACCIONES
+   -------------------------------------------------------------------------- */
+.button {
+    -fx-background-color: #2B2D42;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #4A4E69;
+}
+
+.button:pressed {
+    -fx-background-color: #1E1E24;
+}
+
+/* Botón de acción principal / selección */
+.button-primario {
+    -fx-background-color: #8B5CF6;
+    -fx-text-fill: #FFFFFF;
+}
+
+.button-primario:hover {
+    -fx-background-color: #7C3AED;
+}
+
+/* Botón de éxito (Comprobar / Aceptación) */
+.button-exito {
+    -fx-background-color: #10B981;
+    -fx-text-fill: #FFFFFF;
+}
+
+.button-exito:hover {
+    -fx-background-color: #059669;
+}
+
+/* Botón de advertencia */
+.button-advertencia {
+    -fx-background-color: #F59E0B;
+    -fx-text-fill: #FFFFFF;
+}
+
+.button-advertencia:hover {
+    -fx-background-color: #FBBF24;
+}
+
+/* Botón de peligro / eliminación */
+.button-peligro {
+    -fx-background-color: #EF4444;
+    -fx-text-fill: #FFFFFF;
+}
+
+.button-peligro:hover {
+    -fx-background-color: #DC2626;
+}
+
+/* Botón secundario o neutro suave */
+.button-secundario {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #121212;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+}
+
+.button-secundario:hover {
+    -fx-background-color: #F4F4F6;
+    -fx-border-color: #4A4E69;
+}
+
+/* --------------------------------------------------------------------------
+   6. CAMPOS DE TEXTO
+   -------------------------------------------------------------------------- */
+.text-field {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #121212;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 7px 12px;
+}
+
+.text-field:focused {
+    -fx-border-color: #8B5CF6;
+    -fx-background-color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   7. TABLA DE TRANSICIONES (TABLEVIEW)
+   -------------------------------------------------------------------------- */
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #1E1E24;
+}
+
+.table-view .column-header {
+    -fx-background-color: #1E1E24;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-padding: 8px;
+    -fx-border-color: transparent #4A4E69 transparent transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #FFFFFF;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent transparent #E5E7EB transparent;
+}
+
+.table-view .table-row-cell:odd {
+    -fx-background-color: #F4F4F6;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #EDE9FE;
+    -fx-text-fill: #121212;
+}
+
+.table-view .table-row-cell:selected .text {
+    -fx-fill: #121212;
+}
+
+/* --------------------------------------------------------------------------
+   8. CASILLAS DE VERIFICACIÓN (CHECKBOX)
+   -------------------------------------------------------------------------- */
+.check-box {
+    -fx-text-fill: #121212;
+}
+
+.check-box > .box {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #E5E7EB;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.check-box:selected > .box {
+    -fx-background-color: #8B5CF6;
+    -fx-border-color: #8B5CF6;
+}
+
+.check-box:selected > .box > .mark {
+    -fx-background-color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   9. INSIGNIAS Y VEREDICTOS FORMALES
+   -------------------------------------------------------------------------- */
+.badge-afd {
+    -fx-background-color: #D1FAE5;
+    -fx-text-fill: #10B981;
+    -fx-font-weight: bold;
+    -fx-padding: 4px 10px;
+    -fx-background-radius: 12px;
+}
+
+.badge-afn {
+    -fx-background-color: #FEF3C7;
+    -fx-text-fill: #F59E0B;
+    -fx-font-weight: bold;
+    -fx-padding: 4px 10px;
+    -fx-background-radius: 12px;
+}
+
+.badge-sin-estados {
+    -fx-background-color: #E5E7EB;
+    -fx-text-fill: #6B7280;
+    -fx-font-weight: bold;
+    -fx-padding: 4px 10px;
+    -fx-background-radius: 12px;
+}
+
+.veredicto-aceptada {
+    -fx-background-color: #D1FAE5;
+    -fx-text-fill: #10B981;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 6px 14px;
+    -fx-background-radius: 6px;
+}
+
+.veredicto-rechazada {
+    -fx-background-color: #FEE2E2;
+    -fx-text-fill: #EF4444;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 6px 14px;
+    -fx-background-radius: 6px;
+}
+
+/* --------------------------------------------------------------------------
+   10. TRAZABILIDAD Y RECORRIDO DE CADENAS (VISTA RECORRIDO)
+   -------------------------------------------------------------------------- */
+.vista-recorrido-cadena {
+    -fx-background-color: #FAFAFA;
+    -fx-background-radius: 6px;
+    -fx-border-color: #E5E7EB;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-text-fill: #000000;
+}
+
+.vista-recorrido-cadena .label {
+    -fx-text-fill: #000000 !important;
+}
+
+.vista-recorrido-cadena .text {
+    -fx-fill: #000000 !important;
+}
+
+.tarjeta-recorrido {
+    -fx-background-radius: 6px;
+    -fx-border-radius: 6px;
+    -fx-cursor: hand;
+    -fx-text-fill: #000000;
+}
+
+.tarjeta-recorrido .label {
+    -fx-text-fill: #000000 !important;
+}
+
+.tarjeta-recorrido .text {
+    -fx-fill: #000000 !important;
+}
+
+/* --------------------------------------------------------------------------
+   11. MODO AMÉRICA (ROJO ESCARLATA Y BLANCO - AMÉRICA DE CALI)
+   -------------------------------------------------------------------------- */
+.btn-modo-america {
+    -fx-background-color: #C8102E;
+    -fx-text-fill: #FFFFFF !important;
+    -fx-font-weight: bold;
+    -fx-border-color: #990000;
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+
+.btn-modo-america:hover {
+    -fx-background-color: #990000;
+}
+
+/* Cuando el Modo América está activo en la vista raíz */
+.modo-america {
+    -fx-accent: #C8102E;
+    -fx-focus-color: #C8102E;
+    -fx-faint-focus: rgba(200, 16, 46, 0.25);
+    -fx-background-color: #FFFFFF;
+}
+
+/* Barra superior en rojo América */
+.modo-america .barra-superior-app {
+    -fx-background-color: #C8102E !important;
+    -fx-border-color: #990000 !important;
+    -fx-border-width: 0 0 2px 0 !important;
+}
+
+.modo-america .barra-superior-app .label {
+    -fx-text-fill: #FFFFFF !important;
+}
+
+.modo-america .btn-modo-america {
+    -fx-background-color: #FFFFFF !important;
+    -fx-text-fill: #C8102E !important;
+    -fx-border-color: #FFFFFF !important;
+    -fx-border-width: 2px !important;
+}
+
+.modo-america .btn-modo-america:hover {
+    -fx-background-color: #FFF1F2 !important;
+}
+
+.modo-america .button-primario {
+    -fx-background-color: #FFFFFF !important;
+    -fx-text-fill: #C8102E !important;
+    -fx-border-color: #FFFFFF !important;
+}
+
+.modo-america .button-primario:hover {
+    -fx-background-color: #FFE4E6 !important;
+}
+
+/* TabPane y Pestañas */
+.modo-america .tab-pane {
+    -fx-background-color: #FFFFFF !important;
+}
+
+.modo-america .tab-pane > .tab-header-area {
+    -fx-background-color: #8A0303 !important;
+    -fx-padding: 4px 8px 0px 8px;
+}
+
+.modo-america .tab-pane > .tab-header-area > .headers-region > .tab {
+    -fx-background-color: #990000 !important;
+    -fx-text-fill: #FFFFFF !important;
+    -fx-background-radius: 6px 6px 0px 0px;
+}
+
+.modo-america .tab-pane > .tab-header-area > .headers-region > .tab:hover {
+    -fx-background-color: #B91C1C !important;
+}
+
+.modo-america .tab-pane > .tab-header-area > .headers-region > .tab:selected {
+    -fx-background-color: #FFFFFF !important;
+    -fx-text-fill: #C8102E !important;
+    -fx-border-color: #C8102E transparent transparent transparent !important;
+    -fx-border-width: 3px 0 0 0 !important;
+}
+
+.modo-america .tab-pane > .tab-header-area > .headers-region > .tab:selected .tab-label {
+    -fx-text-fill: #C8102E !important;
+}
+
+/* Paneles de herramientas y comprobación */
+.modo-america .panel-superior {
+    -fx-background-color: #FFFFFF !important;
+    -fx-border-color: #FECDD3 !important;
+}
+
+.modo-america .contenedor-tabla {
+    -fx-background-color: #FFFFFF !important;
+    -fx-border-color: #FECDD3 !important;
+}
+
+.modo-america .panel-comprobacion {
+    -fx-background-color: #FFFFFF !important;
+    -fx-border-color: #FECDD3 !important;
+}
+
+/* Tabla de transiciones */
+.modo-america .table-view {
+    -fx-background-color: #FFFFFF !important;
+    -fx-border-color: #FECDD3 !important;
+}
+
+.modo-america .table-view .column-header-background {
+    -fx-background-color: #C8102E !important;
+}
+
+.modo-america .table-view .column-header {
+    -fx-background-color: #C8102E !important;
+    -fx-border-color: transparent #990000 transparent transparent !important;
+}
+
+.modo-america .table-view .column-header .label {
+    -fx-text-fill: #FFFFFF !important;
+}
+
+.modo-america .table-view .table-row-cell:selected {
+    -fx-background-color: #FFE4E6 !important;
+    -fx-text-fill: #C8102E !important;
+}
+
+.modo-america .table-view .table-row-cell:selected .text {
+    -fx-fill: #C8102E !important;
+}
+
+/* Botones de acción dentro de los paneles en Modo América */
+.modo-america .panel-superior .button-primario {
+    -fx-background-color: #C8102E !important;
+    -fx-text-fill: #FFFFFF !important;
+}
+
+.modo-america .panel-superior .button-primario:hover {
+    -fx-background-color: #990000 !important;
+}
+
+.modo-america .panel-comprobacion .button-exito {
+    -fx-background-color: #C8102E !important;
+    -fx-text-fill: #FFFFFF !important;
+}
+
+.modo-america .panel-comprobacion .button-exito:hover {
+    -fx-background-color: #990000 !important;
+}
+
+/* Campos de texto */
+.modo-america .text-field:focused {
+    -fx-border-color: #C8102E !important;
+}
+
+/* SplitPane divider */
+.modo-america .split-pane > .split-pane-divider:hover {
+    -fx-background-color: #C8102E !important;
+}
+
